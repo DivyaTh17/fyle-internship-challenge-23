@@ -1,0 +1,13 @@
+.loading-skeleton {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .loading-box {
+    width: 100%;
+    height: 20px;
+    margin-bottom: 10px;
+    background-color: #f0f0f0; /* Light gray */
+    border-radius: 4px;
+  }
+  

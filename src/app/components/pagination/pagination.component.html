@@ -1,0 +1,38 @@
+<div class="pagination">
+  <button
+    (click)="onPageChange(1)"
+    [disabled]="isFirstPage"
+    class="pagination-button"
+    aria-label="First Page"
+  >
+    First
+  </button>
+  <button
+    (click)="onPageChange(currentPage - 1)"
+    [disabled]="isFirstPage"
+    class="pagination-button"
+    aria-label="Previous Page"
+  >
+    Previous
+  </button>
+  <span class="pagination-current-page">Page {{ currentPage }} of {{ totalPages }}</span>
+  <select [(ngModel)]="currentPage">
+    <option *ngFor="let page of availablePages" [value]="page">{{ page }}</option>  
+  </select>
+  <button
+    (click)="onPageChange(currentPage + 1)"
+    [disabled]="isLastPage"
+    class="pagination-button"
+    aria-label="Next Page"
+  >
+    Next
+  </button>
+  <button
+    (click)="onPageChange(totalPages)"
+    [disabled]="isLastPage"
+    class="pagination-button"
+    aria-label="Last Page"
+  >
+    Last
+  </button>
+</div>

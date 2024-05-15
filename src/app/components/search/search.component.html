@@ -1,0 +1,4 @@
+<form class="github-search-form" (ngSubmit)="onSubmit()">
+  <input class="github-search-input" type="text" [(ngModel)]="username" [ngModelOptions]="{ standalone: true }" placeholder="Enter GitHub username">
+  <button class="github-search-button" type="submit">Search</button>
+</form>

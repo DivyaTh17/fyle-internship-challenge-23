@@ -1,0 +1,15 @@
+<div class="repo-card-container" *ngIf="repositories.length > 0; else emptyState">
+  <div class="repo-card" *ngFor="let repo of repositories">
+    <!-- Repository information -->
+    <div class="repo-content">
+      <h2>{{ repo.name }}</h2>
+      <p>{{ repo.description }}</p>
+      <div *ngIf="repo.topics">
+        <span *ngFor="let topic of repo.topics" class="bg-blue-200 p-1 mr-2">{{ topic }}</span>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #emptyState>
+  <p>No repositories found.</p>
+</ng-template>

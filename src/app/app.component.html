@@ -1,5 +1,17 @@
-<div class="grid h-screen place-items-center">
-  <div class="font-bold text-3xl">
-    Fyle Internship Challenge
-  </div>
+<div class="page-container">
+<div>
+  <app-search (searchUsername)="onSearch($event)"></app-search>
+</div>
+
+<div *ngIf="user">
+  <h2>Repositories for {{ user.login }}</h2>
+  <app-loading *ngIf="isLoading"></app-loading>
+  <app-repo-list [repositories]="repositories"></app-repo-list>
+  <app-pagination 
+    [currentPage]="currentPage"
+    [pageSize]="pageSize"
+    [totalItems]="totalRepositories"
+    (pageChange)="onPageChange($event)">
+  </app-pagination>
+</div>
 </div>
